@@ -1,0 +1,110 @@
+{
+	"name": "my-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"postinstall": "npm run build",
+		"dev": "vue-cli-service build --watch",
+		"serve": "vue-cli-service serve",
+		"dtos": "cd src && typescript-ref",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint",
+		"publish": "vue-cli-service build && dotnet publish -c Release",
+		"test": "vue-cli-service test:unit --verbose",
+		"test-watch": "vue-cli-service test:unit --watchAll",
+		"e2e": "vue-cli-service test:e2e"
+	},
+	"dependencies": {
+		"@servicestack/client": "^1.0.14",
+		"axios": "^0.18.0",
+		"bootstrap": "^4.1.3",
+		"dayspan-vuetify": "^0.3.6",
+		"es6-shim": "^0.35.3",
+		"firebase": "^5.5.8",
+		"font-awesome": "^4.7.0",
+		"vue": "^2.5.16",
+		"vue-class-component": "^6.0.0",
+		"vue-property-decorator": "^7.0.0",
+		"vue-router": "^3.0.1",
+		"vuetify": "^1.3.7",
+		"vuex": "^3.0.1",
+		"vuex-router-sync": "^5.0.0",
+		"vuex-type-safety": "^3.0.5",
+		"vuex-typex": "^3.0.1"
+	},
+	"devDependencies": {
+		"@babel/polyfill": "^7.0.0-beta.49",
+		"@types/jest": "^23.3.9",
+		"@vue/cli-plugin-babel": "^3.0.0-rc.10",
+		"@vue/cli-plugin-e2e-cypress": "^3.0.0-rc.10",
+		"@vue/cli-plugin-typescript": "^3.0.0-rc.10",
+		"@vue/cli-plugin-unit-jest": "^3.0.0-rc.10",
+		"@vue/cli-service": "^3.0.0-rc.10",
+		"@vue/test-utils": "^1.0.0-beta.20",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-jest": "^23.6.0",
+		"gulp": "^4.0.0",
+		"jest": "^23.6.0",
+		"node-sass": "^4.9.0",
+		"sass-loader": "^7.0.1",
+		"ts-jest": "^23.10.4",
+		"typescript": "^3.1.6",
+		"vue-cli-plugin-vuetify": "^0.1.6",
+		"vue-jest": "^3.0.0",
+		"vue-template-compiler": "^2.5.16"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	],
+	"prettier": {
+		"trailingComma": "all",
+		"arrowParens": "always",
+		"useTabs": true,
+		"tabWidth": 4,
+		"semi": true,
+		"singleQuote": true,
+		"bracketSpacing": true
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"vue"
+		],
+		"transform": {
+			"^.+\\.vue$": "vue-jest",
+			".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+			"^.+\\.tsx?$": "ts-jest",
+			"^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+		},
+		"moduleNameMapper": {
+			"^@/(.*)$": "<rootDir>/src/$1"
+		},
+		"snapshotSerializers": [
+			"jest-serializer-vue"
+		],
+		"testMatch": [
+			"**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+		],
+		"modulePathIgnorePatterns": [
+			"<rootDir>[/\\\\](node_modules|wwwroot|bin)[/\\\\]"
+		],
+		"transformIgnorePatterns": [
+			"node_modules/(?!vue-router)",
+			"node_modules/(?!vuex-type-safety)",
+			"node_modules/(?!vuetify)"
+		],
+		"testURL": "http://localhost:5000/",
+		"setupTestFrameworkScriptFile": "<rootDir>/tests/jest-setup.js"
+	}
+}
